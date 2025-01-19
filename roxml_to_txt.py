@@ -6,7 +6,7 @@ import os
 import xml.etree.ElementTree as ET
 import math
 
-cls_list = ['angle']  # 修改为自己的标签
+cls_list = ['C1', 'C2', 'C2_side', 'C3']  # 修改为自己的标签
 
 
 def edit_xml(xml_file, dotaxml_file):
@@ -107,7 +107,6 @@ def rotatePoint(xc, yc, xp, yp, theta):
 
 def totxt(xml_path, out_path):
     # 想要生成的txt文件保存的路径，这里可以自己修改
-
     files = os.listdir(xml_path)
     i = 0
     for file in files:
@@ -158,9 +157,9 @@ def totxt(xml_path, out_path):
 
 if __name__ == '__main__':
     # -----**** 第一步：把xml文件统一转换成旋转框的xml文件 ****-----
-    roxml_path = r'H:\DL\YOLOv8_OBB_main\dataset_set\angle\1'
-    dotaxml_path = r'H:\DL\YOLOv8_OBB_main\dataset_set\angle\2'
-    out_path = r'H:\DL\YOLOv8_OBB_main\dataset_set\angle\4'
+    roxml_path = r'data/connector/labels_xml'
+    dotaxml_path = r'data/connector/dotaxml'
+    out_path = r'data/connector/labels'
     filelist = os.listdir(roxml_path)
     for file in filelist:
         edit_xml(os.path.join(roxml_path, file), os.path.join(dotaxml_path, file))

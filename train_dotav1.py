@@ -1,4 +1,5 @@
-from ultralytics import YOLO
+# from ultralytics import YOLO
+from ultralytics.models.yolo import YOLO
 import cv2 as cv
 
 # Create a new YOLO11n-OBB model from scratch
