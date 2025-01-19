@@ -30,6 +30,7 @@ ENV/
 *.log
 benchmarks.log
 runs/
+data/
 
 # Dependencies
 node_modules/
