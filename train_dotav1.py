@@ -11,7 +11,7 @@ model = YOLO("yolo11m-obb.yaml").load("yolo11m-obb.pt")
 # Train the model on the DOTAv1 dataset
 # results = model.train(data="DOTAv1.yaml", epochs=2, imgsz=512, workers=0)
 
-results = model("data/DOTAv1/images/test/P0195.jpg")
+results = model("data/DOTAv1/images/test/P0014.jpg")
 
 # def draw_rectangle(image, list_xy):
 #     for xy in list_xy:
