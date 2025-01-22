@@ -1,3 +1,3 @@
 from ultralytics.data.converter import convert_dota_to_yolo_obb
 
-convert_dota_to_yolo_obb(r'D:\\DeepLearning\\ultralytics\\data\\Connector\\00')
+convert_dota_to_yolo_obb(r'/content/drive/MyDrive/ColabNotebooks/datasets/Connector/00')
