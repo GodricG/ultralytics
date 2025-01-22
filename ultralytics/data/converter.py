@@ -457,25 +457,49 @@ def convert_dota_to_yolo_obb(dota_root_path: str):
 
     # Class names to indices mapping
     class_mapping = {
-        "plane": 0,
-        "ship": 1,
-        "storage-tank": 2,
-        "baseball-diamond": 3,
-        "tennis-court": 4,
-        "basketball-court": 5,
-        "ground-track-field": 6,
-        "harbor": 7,
-        "bridge": 8,
-        "large-vehicle": 9,
-        "small-vehicle": 10,
-        "helicopter": 11,
-        "roundabout": 12,
-        "soccer-ball-field": 13,
-        "swimming-pool": 14,
-        "container-crane": 15,
-        "airport": 16,
-        "helipad": 17,
+        "C1": 0,
+        "C1_side": 1,
+        "C1_top": 2,
+        "C1_back": 3,
+        "C2": 4,
+        "C2_side": 5,
+        "C2_back": 6,
+        "C2_half": 7,
+        "C2_internal": 8,
+        "C2_outside": 9,
+        "C2_halfback": 10,
+        "C2_halfside": 11,
+        "C3": 12,
+        "C3_back": 13,
+        "C3_half": 14,
+        "C3_outside": 15,
+        "C3_internal": 16,
+        "C3_halfshort": 17,
+        "C3_halfback": 18,
+        "C3_halfside": 19,
+        "C4_back": 20,
+        "C4_side": 21
     }
+    # class_mapping = {
+    #     "plane": 0,
+    #     "ship": 1,
+    #     "storage-tank": 2,
+    #     "baseball-diamond": 3,
+    #     "tennis-court": 4,
+    #     "basketball-court": 5,
+    #     "ground-track-field": 6,
+    #     "harbor": 7,
+    #     "bridge": 8,
+    #     "large-vehicle": 9,
+    #     "small-vehicle": 10,
+    #     "helicopter": 11,
+    #     "roundabout": 12,
+    #     "soccer-ball-field": 13,
+    #     "swimming-pool": 14,
+    #     "container-crane": 15,
+    #     "airport": 16,
+    #     "helipad": 17,
+    # }
 
     def convert_label(image_name, image_width, image_height, orig_label_dir, save_dir):
         """Converts a single image's DOTA annotation to YOLO OBB format and saves it to a specified directory."""
@@ -506,7 +530,7 @@ def convert_dota_to_yolo_obb(dota_root_path: str):
 
         image_paths = list(image_dir.iterdir())
         for image_path in TQDM(image_paths, desc=f"Processing {phase} images"):
-            if image_path.suffix != ".png":
+            if image_path.suffix != ".bmp":
                 continue
             image_name_without_ext = image_path.stem
             img = cv2.imread(str(image_path))

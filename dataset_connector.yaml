@@ -1,0 +1,40 @@
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+
+# COCO 2017 dataset https://cocodataset.org by Microsoft
+# Documentation: https://docs.ultralytics.com/datasets/detect/coco/
+# Example usage: yolo train data=coco.yaml
+# parent
+# ├── ultralytics
+# └── datasets
+#     └── coco  ← downloads here (20.1 GB)
+
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: Connector/00 # dataset root dir
+train: images/train # train images (relative to 'path') 1411 images
+val: images/val # val images (relative to 'path') 458 images
+test: images/test # test images (optional) 937 images
+
+# Classes
+names:
+  0: C1
+  1: C1_side
+  2: C1_top
+  3: C1_back
+  4: C2
+  5: C2_side
+  6: C2_back
+  7: C2_half
+  8: C2_internal
+  9: C2_outside
+  10: C2_halfback
+  11: C2_halfside
+  12: C3
+  13: C3_back
+  14: C3_half
+  15: C3_outside
+  16: C3_internal
+  17: C3_halfshort
+  18: C3_halfback
+  19: C3_halfside
+  20: C4_back
+  21: C4_side

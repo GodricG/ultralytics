@@ -6,13 +6,15 @@ import cv2 as cv
 # model = YOLO("yolo11m-obb.yaml").load("runs/obb/train2/weights/best.pt")
 model = YOLO("yolo11m-obb.yaml").load("yolo11m-obb.pt")
 
+# model = YOLO("runs/obb/train/weights/best.pt")
+
 # Costumed model
 # model = YOLO("my_cfg/yolo11-obb-c.yaml").load("yolo11n-obb.pt")
 
 # Train the model on the DOTAv1 dataset
-# results = model.train(data="DOTAv1.yaml", epochs=2, imgsz=512, workers=0)
+results = model.train(data="dataset_connector.yaml", epochs=100, imgsz=1024, workers=0)
 
-results = model("data/DOTAv1/images/test/P0014.jpg")
+# results = model("data/Connector/00/images/train/Image_20250116150706319.bmp")
 
 # def draw_rectangle(image, list_xy):
 #     for xy in list_xy:

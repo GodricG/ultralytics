@@ -6,7 +6,12 @@ import os
 import xml.etree.ElementTree as ET
 import math
 
-cls_list = ['C1', 'C2', 'C2_side', 'C3']  # 修改为自己的标签
+cls_list = ['C1', 'C1_side', 'C1_top', 'C1_back',
+            'C2', 'C2_side', 'C2_back', 'C2_half', 'C2_internal',
+            'C2_outside', 'C2_halfback', 'C2_halfside',
+            'C3', 'C3_back', 'C3_half', 'C3_outside', 'C3_internal', 'C3_halfshort',
+            'C3_halfback', 'C3_halfside',
+            'C4_back', 'C4_side']  # 修改为自己的标签
 
 
 def edit_xml(xml_file, dotaxml_file):
@@ -157,9 +162,9 @@ def totxt(xml_path, out_path):
 
 if __name__ == '__main__':
     # -----**** 第一步：把xml文件统一转换成旋转框的xml文件 ****-----
-    roxml_path = r'data/connector/labels_xml'
-    dotaxml_path = r'data/connector/dotaxml'
-    out_path = r'data/connector/labels'
+    roxml_path = r'H:\\Connector_sort\\labels_roxml'
+    dotaxml_path = r'H:\\Connector_sort\\labels_dotaxml'
+    out_path = r'H:\\Connector_sort\\labels'
     filelist = os.listdir(roxml_path)
     for file in filelist:
         edit_xml(os.path.join(roxml_path, file), os.path.join(dotaxml_path, file))
